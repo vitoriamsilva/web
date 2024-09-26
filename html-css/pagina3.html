@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Veículo</title>
+    <link rel="stylesheet" href="estilo/style.css">
+    <script>
+        function redirecionarPagina() {
+            alert("Formulário enviado com sucesso!");
+            window.location.href = "pagina1.html"; 
+        }
+    </script>
+</head>
+<body class="body-cadastramento">
+    <header class="header-cadastramento">
+        <h1>Mary's Car</h1>
+    </header>
+    
+    <div class="form-container">
+        <h2>Cadastro de Veículo</h2>
+        <form onsubmit="redirecionarPagina(); return false;">
+            <label for="marca">Marca:</label>
+            <select id="marca" name="marca" required>
+                <option value="" disabled selected>Selecione a marca</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Honda">Honda</option>
+                <option value="Ford">Ford</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="BMW">BMW</option>
+            </select>
+
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" required>
+
+            <label for="ano">Ano:</label>
+            <input type="number" id="ano" name="ano" min="1900" max="2024" required>
+
+            <label for="placa">Placa:</label>
+            <input type="text" id="placa" name="placa" required>
+
+            <label>Opcionais:</label>
+            <div class="checkbox-grupo">
+                <input type="checkbox" id="air-condicionado" name="opcional" value="Ar-condicionado">
+                <label for="ar-condicionado">Ar-condicionado</label>
+
+                <input type="checkbox" id="teto" name="option" value="Teto solar">
+                <label for="teto">Teto solar</label>
+
+                <input type="checkbox" id="gps" name="opcional" value="GPS">
+                <label for="gps">GPS</label>
+            </div>
+
+            <label for="data">Data de Aquisição:</label>
+            <input type="date" id="data" name="data" required>
+
+            <button type="submit">Cadastrar Veículo</button>
+        </form>
+    </div>
+</body>
+</html>
